@@ -12,9 +12,10 @@ public class Estudiante {
     int codigo = 0;
     String correo = " ";
 
-    //ArrayList<Integer> sede = new ArrayList<Integer>();
-    private ArrayList curso;
-    private ArrayList sedes;
+    private ArrayList<Examenes> curso = new ArrayList<>();
+    //private ArrayList curso;
+    private ArrayList<Examenes> sedes = new ArrayList<>();
+    //ArrayList<Integer> sedes = new ArrayList<>();
 
     int nota = 0;
     int suma = 0;
@@ -69,15 +70,9 @@ public class Estudiante {
         return this.curso.size();
     }
 
-    // public void imprimirCursos(){
-    //     for(Examenes c : this.curso){
-    //         System.out.println(c.getNombre() + " - "  + c.getNota());
-    //         suma += c.getNota();
-    //     }
-    // }
-
     //Arraylist sedes
     public ArrayList<Integer> getSede(){
+        ArrayList<Integer> sedes = new ArrayList<>();
         for(int i = 0; i<sedes.size(); i++){
             sedes.add(i);
         }
@@ -88,7 +83,12 @@ public class Estudiante {
         //Promedio
     public float getPromedio(){
         int n = this.curso.size();
-        return (float)suma/n;
+        if (n==0){
+            return 0.0f;
+        }
+        float suma = 0.0f;
+
+        return suma/n;
     }
 
     public void setPromedio(){
@@ -140,6 +140,7 @@ public class Estudiante {
 	        if(b[i]==m)
               System.out.println(a[i]);   
 	    }
+
     }    
 
         //Desviación estándar
@@ -162,11 +163,4 @@ public class Estudiante {
         desviacion = Math.sqrt(varianza); //raíz cuadrada
         System.out.println("Desvianción Estándar: " + desviacion);
     }    
-
-    
-
-
-    
-
-    
 }

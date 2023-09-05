@@ -11,12 +11,14 @@ public class Examenes {
     //Definir variables
     int nota;
     String nClase;
+    String sede;
     ArrayList<String> cursos = new ArrayList<String>();
     ArrayList<String> sedes = new ArrayList<String>();
 
-    public Examenes(String nClase, int nota){
+    public Examenes(String nClase, int nota, String sede){
         this.nClase = nClase;
         this.nota = nota;
+        this.sede = sede;
     }
 
     //Getters
@@ -26,6 +28,10 @@ public class Examenes {
 
     public int getNota(){
         return this.nota;
+    }
+
+    public String getSede(){
+        return this.sede;
     }
 
 }
